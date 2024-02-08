@@ -1,3 +1,3 @@
-# all_widgets
+# Google Classroom Clone
 
-A new Flutter project.
+![alt text](Screenshot_1707280878-1.png)
