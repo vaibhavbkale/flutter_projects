@@ -30,7 +30,7 @@ To get started with these projects, follow these steps:
    git clone https://github.com/vaibhavbkale/flutter_projects.git
 
 2. Navigate to the project directory: 
-   ```
+   ```bash
    cd flutter_projects
    ```
 3. Choose a project you're interested in exploring and navigate to its directory.
@@ -48,14 +48,14 @@ Contributions to this repository are welcome! If you'd like to contribute a new 
 2. Clone your forked repository to your local machine.
 
 3. Create a new branch for your changes:
-   ```
+   ```bash
    git checkout -b feature/your-feature-name
    ```
 
 4. Make your changes and commit them with descriptive commit messages.
 
 5. Push your changes to your forked repository:
-   ```
+   ```bash
     git push origin feature/your-feature-name
    ```
 
@@ -68,8 +68,9 @@ Contributions to this repository are welcome! If you'd like to contribute a new 
 ## License
 
 This repository is licensed under the MIT License, which means you are free to use, modify, and distribute the code for personal or commercial purposes. However, please ensure to include the original license and attribution when using the code.
-
+```css
 Feel free to customize this README according to your specific projects and preferences.
+```
 
 
 
