@@ -30,9 +30,9 @@ To get started with these projects, follow these steps:
    git clone https://github.com/vaibhavbkale/flutter_projects.git
 
 2. Navigate to the project directory: 
-   '''
+   ```
    cd flutter_projects
-   '''
+   ```
 3. Choose a project you're interested in exploring and navigate to its directory.
 
 4. Follow the README.md file in each project directory for specific instructions on running the project, dependencies, and any additional setup required.
@@ -48,16 +48,16 @@ Contributions to this repository are welcome! If you'd like to contribute a new 
 2. Clone your forked repository to your local machine.
 
 3. Create a new branch for your changes:
-   '''
+   ```
    git checkout -b feature/your-feature-name
-   '''
+   ```
 
 4. Make your changes and commit them with descriptive commit messages.
 
 5. Push your changes to your forked repository:
-   '''
+   ```
     git push origin feature/your-feature-name
-   '''
+   ```
 
 6. Create a pull request from your forked repository to the main repository.
 
