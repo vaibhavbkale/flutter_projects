@@ -1,3 +1,3 @@
 # assignment2
 
-A new Flutter project.
+![alt text](Screenshot_1706687812-1.png)

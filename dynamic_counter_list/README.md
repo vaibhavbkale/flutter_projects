@@ -1,3 +1,5 @@
 # dynamic_counter_list
 
-A new Flutter project.
+![alt text](Screenshot_1707194356-1.png)
+
+![alt text](Screenshot_1707194366-1.png)
