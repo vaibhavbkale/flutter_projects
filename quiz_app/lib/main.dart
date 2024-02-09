@@ -24,6 +24,20 @@ class QuizApp extends StatefulWidget {
 }
 
 class _QuizAppState extends State {
+  List<Color?> colorList = [null, null, null, null];
+  void checkAns(int index) {
+    if (allQuestions[questionIndex]["options"] == index) {
+      setState(() {
+        colorList[index] = Colors.green;
+      });
+    } else {
+      setState(() {
+        colorList[index] = Colors.red;
+        colorList[allQuestions[questionIndex]["answerIndex"]] = Colors.green;
+      });
+    }
+  }
+
   List<Map> allQuestions = [
     {
       "question": "Who is the founder of Microsoft?",
@@ -53,17 +67,19 @@ class _QuizAppState extends State {
   ];
   bool questionScreen = true;
   int questionIndex = 0;
+  int clickedAns = -1;
 
   Scaffold isQuestionScreen() {
     if (questionScreen == true) {
       return Scaffold(
         appBar: AppBar(
-          title: const Text("Quiz App",
-          style: TextStyle(
-            fontSize: 30,
-            fontWeight: FontWeight.w800,
-            color: Colors.orange,
-          ),
+          title: const Text(
+            "Quiz App",
+            style: TextStyle(
+              fontSize: 30,
+              fontWeight: FontWeight.w800,
+              color: Colors.orange,
+            ),
           ),
           centerTitle: true,
           backgroundColor: Colors.blue,
@@ -76,11 +92,12 @@ class _QuizAppState extends State {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Questions : ",
-                style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w600,
-                ),
+                const Text(
+                  "Questions : ",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
                 Text(
                   "${questionIndex + 1}/${allQuestions.length}",
@@ -98,7 +115,7 @@ class _QuizAppState extends State {
               width: 380,
               height: 50,
               child: Text(
-                allQuestions[questionIndex] ["question"],
+                allQuestions[questionIndex]["question"],
                 style: const TextStyle(
                   fontSize: 23,
                   fontWeight: FontWeight.w400,
@@ -109,9 +126,14 @@ class _QuizAppState extends State {
               height: 30,
             ),
             ElevatedButton(
-              onPressed: (){},
+              onPressed: () {
+                checkAns(0);
+              },
+              style: ButtonStyle(
+                  //minimumSize: MaterialStateProperty.all(const Size(500, 50)),
+                  backgroundColor: MaterialStateProperty.all(colorList[0])),
               child: Text(
-                "A.${allQuestions [questionIndex] ["options"] [0]}",
+                "A.${allQuestions[questionIndex]["options"][0]}",
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.normal,
@@ -122,9 +144,14 @@ class _QuizAppState extends State {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: (){},
+              onPressed: () {
+                checkAns(1);
+              },
+              style: ButtonStyle(
+                  //minimumSize: MaterialStateProperty.all(const Size(500, 50)),
+                  backgroundColor: MaterialStateProperty.all(colorList[1])),
               child: Text(
-                "B.${allQuestions [questionIndex] ["options"] [1]}",
+                "B.${allQuestions[questionIndex]["options"][1]}",
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.normal,
@@ -135,9 +162,14 @@ class _QuizAppState extends State {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: (){},
+              onPressed: () {
+                checkAns(2);
+              },
+              style: ButtonStyle(
+                  //minimumSize: MaterialStateProperty.all(const Size(500, 50)),
+                  backgroundColor: MaterialStateProperty.all(colorList[2])),
               child: Text(
-                "C.${allQuestions [questionIndex] ["options"] [2]}",
+                "C.${allQuestions[questionIndex]["options"][2]}",
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.normal,
@@ -148,9 +180,14 @@ class _QuizAppState extends State {
               height: 20,
             ),
             ElevatedButton(
-              onPressed: (){},
+              onPressed: () {
+                checkAns(3);
+              },
+              style: ButtonStyle(
+                  //minimumSize: MaterialStateProperty.all(const Size(500, 50)),
+                  backgroundColor: MaterialStateProperty.all(colorList[3])),
               child: Text(
-                "D.${allQuestions [questionIndex] ["options"] [3]}",
+                "D.${allQuestions[questionIndex]["options"][3]}",
                 style: const TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.normal,
@@ -163,10 +200,15 @@ class _QuizAppState extends State {
           ],
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: (){},
+          onPressed: () {
+            setState(() {
+              questionIndex++;
+            });
+          },
           backgroundColor: Colors.blue,
-          child: const Icon(Icons.forward,
-          color: Colors.orange,
+          child: const Icon(
+            Icons.forward,
+            color: Colors.orange,
           ),
         ),
       );
